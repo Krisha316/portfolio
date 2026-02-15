@@ -54,7 +54,7 @@ const item = {
 const allProjects = [
   { title: "Cloud Guard", description: "AI-assisted system for Anomalous Login Detection in Cloud Environments. Combines cybersecurity and AI to identify fraudulent login behavior in real time.", tech: ["HTML", "CSS", "Angular JS","Fingerprint JS", "Chart JS", "Django Rest Framework", "MySQL", "External APIs", "GeoIP2 Databse", "pandas", "numpy", "scikit-learn", "xgboost"], img: cloudGuardPreview, github: "https://github.com/Krisha316/CloudGuard.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
   { title: "Band Fraud Detection System", description: "AI-powered Financial Fraud Detection System built for the Aubergine Solutions track. Full stack solution for detecting and preventing fraud in transactions.", tech: ["HTML", "CSS", "Angular JS","Django Rest Framework","MySQL","numpy","pandas", "scikit-learn"], img: project2Preview, github: "https://github.com/Krisha316/Bank-Fraud-Detection.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
-  { title: "retailOS", description: "Demo e-commerce platform with inventory management powered by AI insights and product recommendations.", tech: [ "React","Django Rest Framework", "MySQL"], img: noneImg, github: "https://github.com/Krisha316/retail_os.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"}
+  { title: "retailOS", description: "Demo e-commerce platform with inventory management powered by AI insights and product recommendations.", tech: [ "React","Django Rest Framework", "MySQL"], img: noneImg, github: "https://github.com/Krisha316/retail_os.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
 ];
 
 const allAchievements = [
@@ -79,14 +79,16 @@ export default function Home() {
           className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]"
         >
           {/* 1. Profile Photo & Intro - Large Vertical Card */}
-          {/* 1. Intro Card (No Photo) */}
+          {/* 1. Intro Card (FAANG Clean) */}
           <motion.div
             variants={item}
-            className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-3xl border border-white/10 bg-card/50 backdrop-blur-sm shadow-2xl p-10 flex flex-col justify-center"
+            className="md:col-span-2 md:row-span-2 rounded-3xl border border-white/10 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl shadow-2xl p-10 flex flex-col justify-center relative overflow-hidden"
           >
+            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.25),transparent_40%)]" />
+
             <Badge
               variant="secondary"
-              className="mb-4 w-fit bg-primary/20 text-primary border-primary/20 backdrop-blur-md"
+              className="mb-5 w-fit bg-primary/20 text-primary border-primary/20"
             >
               Open to Work
             </Badge>
@@ -95,18 +97,19 @@ export default function Home() {
               Krisha Shah
             </h1>
 
-            <p className="text-muted-foreground text-lg font-light max-w-xl mt-3">
-              Computer Science Undergraduate specializing in Full Stack Development,
-              AI-driven Security, and scalable enterprise systems.
+            <p className="text-muted-foreground text-lg mt-4 max-w-xl">
+              Computer Science Undergraduate focused on building scalable full-stack
+              systems, AI-driven security solutions, and production-ready applications.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
               <Badge variant="secondary">Full Stack</Badge>
-              <Badge variant="secondary">AI Security</Badge>
-              <Badge variant="secondary">Django REST</Badge>
-              <Badge variant="secondary">React</Badge>
+              <Badge variant="secondary">Django REST Framework</Badge>
+              <Badge variant="secondary">React JS</Badge>
+              <Badge variant="secondary">MySQL</Badge>
             </div>
           </motion.div>
+
 
           
           {/* Contact Info Box - Below Photo */}
@@ -131,7 +134,7 @@ export default function Home() {
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               <Code2 size={120} />
             </div>
-            <h2 className="text-2xl font-mono text-primary mb-2">CS Student @ University</h2>
+            <h2 className="text-2xl font-mono text-primary mb-2">CS Student @ Institute of Technology Nirma University</h2>
             <p className="text-muted-foreground">
               Passionate about building scalable systems and intuitive user experiences.
             </p>
