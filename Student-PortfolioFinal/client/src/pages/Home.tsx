@@ -52,9 +52,9 @@ const item = {
 };
 
 const allProjects = [
-  { title: "Cloud Guard", description: "AI-assisted system for Anomalous Login Detection in Cloud Environments. Combines cybersecurity and AI to identify fraudulent login behavior in real time.", tech: ["HTML", "CSS", "Angular JS","Fingerprint JS", "Chart JS", "Django Rest Framework", "MySQL", "External APIs", "GeoIP2 Databse", "pandas", "numpy", "scikit-learn", "xgboost"], img: cloudGuardPreview, github: "https://github.com/example/cloud-guard", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
-  { title: "Financial Fraud Detection System", description: "AI-powered Financial Fraud Detection System built for the Aubergine Solutions track. Full stack solution for detecting and preventing fraud in transactions.", tech: ["HTML", "CSS", "Angular JS","Django Rest Framework","MySQL","numpy","pandas", "scikit-learn"], img: project2Preview, github: "https://github.com/example/fraud-detection", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
-  { title: "AI-assisted Shopping & Inventory Website", description: "Demo e-commerce platform with inventory management powered by AI insights and product recommendations.", tech: [ "React","Django Rest Framework", "MySQL"], img: noneImg, github: "https://github.com/example/fraud-detection", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"}
+  { title: "Cloud Guard", description: "AI-assisted system for Anomalous Login Detection in Cloud Environments. Combines cybersecurity and AI to identify fraudulent login behavior in real time.", tech: ["HTML", "CSS", "Angular JS","Fingerprint JS", "Chart JS", "Django Rest Framework", "MySQL", "External APIs", "GeoIP2 Databse", "pandas", "numpy", "scikit-learn", "xgboost"], img: cloudGuardPreview, github: "https://github.com/Krisha316/CloudGuard.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
+  { title: "Band Fraud Detection System", description: "AI-powered Financial Fraud Detection System built for the Aubergine Solutions track. Full stack solution for detecting and preventing fraud in transactions.", tech: ["HTML", "CSS", "Angular JS","Django Rest Framework","MySQL","numpy","pandas", "scikit-learn"], img: project2Preview, github: "https://github.com/Krisha316/Bank-Fraud-Detection.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
+  { title: "retailOS", description: "Demo e-commerce platform with inventory management powered by AI insights and product recommendations.", tech: [ "React","Django Rest Framework", "MySQL"], img: noneImg, github: "https://github.com/Krisha316/retail_os.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"}
 ];
 
 const allAchievements = [
@@ -79,25 +79,35 @@ export default function Home() {
           className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]"
         >
           {/* 1. Profile Photo & Intro - Large Vertical Card */}
-          <motion.div variants={item} className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-card/50 backdrop-blur-sm shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-            <img 
-              src={profileImage} 
-              alt="Profile" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-8 z-20 space-y-2">
-              <Badge variant="secondary" className="mb-2 bg-primary/20 text-primary border-primary/20 backdrop-blur-md">
-                Open to Work
-              </Badge>
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
-                Krisha Shah
-              </h1>
-              <p className="text-muted-foreground text-lg font-light max-w-md">
-                Computer Science Undergraduate specialized in Full Stack Development & AI-driven Security.
-              </p>
+          {/* 1. Intro Card (No Photo) */}
+          <motion.div
+            variants={item}
+            className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-3xl border border-white/10 bg-card/50 backdrop-blur-sm shadow-2xl p-10 flex flex-col justify-center"
+          >
+            <Badge
+              variant="secondary"
+              className="mb-4 w-fit bg-primary/20 text-primary border-primary/20 backdrop-blur-md"
+            >
+              Open to Work
+            </Badge>
+
+            <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight">
+              Krisha Shah
+            </h1>
+
+            <p className="text-muted-foreground text-lg font-light max-w-xl mt-3">
+              Computer Science Undergraduate specializing in Full Stack Development,
+              AI-driven Security, and scalable enterprise systems.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Badge variant="secondary">Full Stack</Badge>
+              <Badge variant="secondary">AI Security</Badge>
+              <Badge variant="secondary">Django REST</Badge>
+              <Badge variant="secondary">React</Badge>
             </div>
           </motion.div>
+
           
           {/* Contact Info Box - Below Photo */}
           <motion.div variants={item} className="md:col-span-2 bg-gradient-to-br from-primary/20 to-accent/10 border border-primary/30 rounded-3xl p-6 flex items-center gap-6 group hover:border-primary/50 transition-colors">
@@ -109,16 +119,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-light uppercase tracking-wide">Email</p>
-                    <p className="text-sm font-mono text-foreground">krishabr2007@gmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-accent/20 rounded-lg">
-                    <Phone size={20} className="text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground font-light uppercase tracking-wide">Phone</p>
-                    <p className="text-sm font-mono text-foreground">+91-9727470882</p>
+                    <p className="text-sm font-mono text-foreground">24bce293@nirmauni.ac.in</p>
                   </div>
                 </div>
               </div>
@@ -423,30 +424,7 @@ export default function Home() {
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-1">Email</h3>
                       <p className="text-sm text-muted-foreground mb-3">Send me a message</p>
-                      <p className="text-primary font-mono text-sm">krishabr2007@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.a>
-
-              {/* Phone Card */}
-              <motion.a 
-                href="tel:+919727470882"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="block group"
-              >
-                <div className="h-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 rounded-3xl p-8 hover:border-accent/70 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20">
-                  <div className="flex flex-col items-center text-center gap-4">
-                    <div className="p-4 bg-accent/20 rounded-2xl group-hover:bg-accent/30 transition-colors">
-                      <Phone size={32} className="text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">Phone</h3>
-                      <p className="text-sm text-muted-foreground mb-3">Call me anytime</p>
-                      <p className="text-accent font-mono text-sm">+91-9727470882</p>
+                      <p className="text-primary font-mono text-sm">24bce293@nirmauni.ac.in</p>
                     </div>
                   </div>
                 </div>
