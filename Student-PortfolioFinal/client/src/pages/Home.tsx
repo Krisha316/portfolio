@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import profileImage from "@assets/myphoto.png";
-import resumePDF from "@assets/Krisha_Shah_1766132669268.pdf";
+import resumePDF from "@assets/krisha_resume.pdf";
 import cloudGuardPreview from "@assets/1760344517239.jpeg";
 import cloudG1 from "@assets/1760344514934.jpeg";
 import cloudG2 from "@assets/1760344515203.jpeg";
@@ -76,6 +76,7 @@ const allAchievements = [
 export default function Home() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  console.log(resumePDF)
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       <Header />

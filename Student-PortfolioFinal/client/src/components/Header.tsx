@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import resumePDF from "@assets/Krisha_Shah_1766132669268.pdf";
+import resumePDF from "@assets/krisha_resume.pdf";
 
 export default function Header() {
   const navItems = [
