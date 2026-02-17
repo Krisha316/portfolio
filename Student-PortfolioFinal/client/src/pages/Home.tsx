@@ -17,10 +17,21 @@ import Header from "@/components/Header";
 import profileImage from "@assets/myphoto.png";
 import resumePDF from "@assets/Krisha_Shah_1766132669268.pdf";
 import cloudGuardPreview from "@assets/1760344517239.jpeg";
+import cloudG1 from "@assets/1760344514934.jpeg";
+import cloudG2 from "@assets/1760344515203.jpeg";
+import cloudG3 from "@assets/1760344515373.jpeg";
+import cloudG4 from "@assets/1760344515387.jpeg";
+import cloudG5 from "@assets/1760344515470.jpeg";
+import cloudG6 from "@assets/1760344516368.jpeg";
+import cloudG7 from "@assets/1760344522861.jpeg";
+import stillbuilding from "@assets/stillbuilding.png";
 import aubergieneCerti from "@assets/aubergieneCertificatate.png";
 import intellihackCerti from "@assets/intellihackCertificate.jpeg";
 import noneImg from "@assets/images.png";
 import project2Preview from "@assets/1744909539881.jpeg"
+import aub1 from "@assets/aub1.jpeg";
+import aub3 from "@assets/aub3.jpeg";
+import aub4 from "@assets/aub4.jpeg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -33,7 +44,7 @@ type Project = {
   tech: string[];
   img: string;
   github: string;
-  video: string;
+  imagesCarasoul: string[];
 };
 
 const container = {
@@ -52,9 +63,9 @@ const item = {
 };
 
 const allProjects = [
-  { title: "Cloud Guard", description: "AI-assisted system for Anomalous Login Detection in Cloud Environments. Combines cybersecurity and AI to identify fraudulent login behavior in real time.", tech: ["HTML", "CSS", "Angular JS","Fingerprint JS", "Chart JS", "Django Rest Framework", "MySQL", "External APIs", "GeoIP2 Databse", "pandas", "numpy", "scikit-learn", "xgboost"], img: cloudGuardPreview, github: "https://github.com/Krisha316/CloudGuard.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
-  { title: "Band Fraud Detection System", description: "AI-powered Financial Fraud Detection System built for the Aubergine Solutions track. Full stack solution for detecting and preventing fraud in transactions.", tech: ["HTML", "CSS", "Angular JS","Django Rest Framework","MySQL","numpy","pandas", "scikit-learn"], img: project2Preview, github: "https://github.com/Krisha316/Bank-Fraud-Detection.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
-  { title: "retailOS", description: "Demo e-commerce platform with inventory management powered by AI insights and product recommendations.", tech: [ "React","Django Rest Framework", "MySQL"], img: noneImg, github: "https://github.com/Krisha316/retail_os.git", video: "https://www.youtube.com/embed/dQw4w9WgXcQ"},
+  { title: "Cloud Guard", description: "AI-assisted system for Anomalous Login Detection in Cloud Environments. Combines cybersecurity and AI to identify fraudulent login behavior in real time.", tech: ["HTML", "CSS", "Angular JS","Fingerprint JS", "Chart JS", "Django Rest Framework", "MySQL","AbuseIPDB", "IPQualityScore","GeoIP2 Databse", "pandas", "numpy", "scikit-learn", "xgboost"], img: cloudGuardPreview, github: "https://github.com/Krisha316/CloudGuard.git", imagesCarasoul: [cloudGuardPreview,cloudG1, cloudG2, cloudG3, cloudG4, cloudG5, cloudG6, cloudG7]},
+  { title: "Band Fraud Detection System", description: "AI-powered Financial Fraud Detection System built for the Aubergine Solutions track. Full stack solution for detecting and preventing fraud in transactions.", tech: ["HTML", "CSS", "Angular JS","Django Rest Framework","MySQL","numpy","pandas", "scikit-learn"], img: project2Preview, github: "https://github.com/Krisha316/Bank-Fraud-Detection.git", imagesCarasoul: [project2Preview, aub3, aub1, aub4]},
+  { title: "retailOS", description: "an enterprise-grade e-commerce platform demonstrating multi-domain architecture, JWT-based authentication, AI-assisted features, and structured inventory and logistics workflows. Designed with scalability and modularity in mind, enabling seamless integration across multiple business domains.Implements secure, high-performance APIs and intelligent automation to optimize order management, analytics, and operational efficiency.", tech: [ "React","Django Rest Framework", "MySQL", "JWT Auth", "Cloudinary (Media Management & CDN)"], img: stillbuilding, github: "https://github.com/Krisha316/retail_os.git", imagesCarasoul: [stillbuilding]},
 ];
 
 const allAchievements = [
@@ -64,6 +75,7 @@ const allAchievements = [
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       <Header />
@@ -243,7 +255,10 @@ export default function Home() {
                     <CardTitle className="flex justify-between items-center">
                       {project.title}
                       <button
-                        onClick={() => setActiveProject(project)}
+                        onClick={() => {
+                          setActiveProject(project);
+                          setActiveProjectIndex(0);
+                        }}
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         <ArrowUpRight size={18} />
@@ -301,17 +316,85 @@ export default function Home() {
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden"
+              className="relative w-full max-w-5xl h-[520px] bg-black rounded-2xl overflow-hidden"
             >
-              {/* VIDEO ONLY */}
-              <iframe
-                src={activeProject.video}
-                title="Project Demo"
-                className="w-full h-full"
-                allow="autoplay; encrypted-media; fullscreen"
-                allowFullScreen
-              />
+              {/* 🔥 Advanced Carousel */}
+              <div className="relative w-full h-full overflow-hidden group">
+                {/* Track */}
+                <motion.div
+                  key={activeProject.title}
+                  className="flex h-full"
+                  animate={{ x: `-${(activeProjectIndex || 0) * 100}%` }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  {activeProject.imagesCarasoul.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`${activeProject.title}-${idx}`}
+                      className="w-full h-full object-contain flex-shrink-0 bg-black"
+                    />
+                  ))}
+                </motion.div>
 
+                {/* LEFT ARROW */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveProjectIndex((prev) =>
+                      prev === 0
+                        ? activeProject.imagesCarasoul.length - 1
+                        : prev - 1
+                    );
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2
+                            bg-black/60 hover:bg-black/80
+                            text-white w-10 h-10 rounded-full
+                            flex items-center justify-center
+                            opacity-0 group-hover:opacity-100
+                            transition"
+                >
+                  ‹
+                </button>
+
+                {/* RIGHT ARROW */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveProjectIndex((prev) =>
+                      prev === activeProject.imagesCarasoul.length - 1
+                        ? 0
+                        : prev + 1
+                    );
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2
+                            bg-black/60 hover:bg-black/80
+                            text-white w-10 h-10 rounded-full
+                            flex items-center justify-center
+                            opacity-0 group-hover:opacity-100
+                            transition"
+                >
+                  ›
+                </button>
+
+                {/* DOTS */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {activeProject.imagesCarasoul.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveProjectIndex(idx);
+                      }}
+                      className={`w-2.5 h-2.5 rounded-full transition ${
+                        idx === activeProjectIndex
+                          ? "bg-white"
+                          : "bg-white/40"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
               {/* Close button */}
               <button
                 onClick={() => setActiveProject(null)}
@@ -410,7 +493,7 @@ export default function Home() {
             </div>
 
             {/* Main Contact Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Email Card */}
               <motion.a 
                 href="mailto:krishabr2007@gmail.com"
@@ -472,7 +555,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="block group"
                 >
-                  <div className="bg-gradient-to-r from-[#0077b5]/20 to-transparent border border-[#0077b5]/30 rounded-2xl p-6 hover:border-[#0077b5]/60 transition-all">
+                  <div className="h-full bg-gradient-to-r from-[#0077b5]/20 to-transparent border border-[#0077b5]/30 rounded-2xl p-6 hover:border-[#0077b5]/60 transition-all">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-[#0077b5]/20 rounded-xl group-hover:bg-[#0077b5]/30 transition-colors">
                         <Linkedin size={24} className="text-[#0077b5]" />
@@ -497,7 +580,7 @@ export default function Home() {
                   transition={{ delay: 0.1 }}
                   className="block group"
                 >
-                  <div className="bg-gradient-to-r from-[#24292e]/40 to-[#24292e]/10 border border-[#24292e]/60 rounded-2xl p-6 hover:border-white/80 transition-all hover:shadow-lg hover:shadow-white/20">
+                  <div className="h-full bg-gradient-to-r from-[#24292e]/40 to-[#24292e]/10 border border-[#24292e]/60 rounded-2xl p-6 hover:border-white/80 transition-all hover:shadow-lg hover:shadow-white/20">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-[#24292e]/30 rounded-xl group-hover:bg-white/20 transition-colors">
                         <Github size={24} className="text-white group-hover:text-white" />
