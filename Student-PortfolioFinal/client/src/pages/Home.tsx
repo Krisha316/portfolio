@@ -199,10 +199,10 @@ export default function Home() {
             <div className="space-y-4">
               {[
                 { title: "Languages", skills: ["Python", "C", "C++", "JavaScript"], colorbadge: "bg-blue-400/20 text-blue-400 border border-blue-400/30" },
-                { title: "Web Dev", skills: ["HTML", "CSS (Bootstrap)", "React", "Django REST", "MySQL"], colorbadge: "bg-purple-400/20 text-purple-400 border border-purple-400/30" },
+                { title: "Web Dev", skills: ["HTML", "CSS (Bootstrap)", "ReactJS", "Django REST Framework", "MySQL"], colorbadge: "bg-purple-400/20 text-purple-400 border border-purple-400/30" },
                 { title: "Data & ML", skills: ["NumPy", "Pandas", "Matplotlib", "Scikit-learn"], colorbadge: "bg-pink-400/20 text-pink-400 border border-pink-400/30" },
                 { title: "iOS", skills: [ "Swift", "SwiftUI", "Realm"], colorbadge: "bg-cyan-400/20 text-cyan-400 border border-cyan-400/30" },
-                { title: "Tools", skills: ["GitHub", "VS Code", "Jupyter", "Google Colab", "Postman"], colorbadge: "bg-yellow-400/20 text-yellow-400 border border-yellow-400/30" },
+                { title: "Tools", skills: ["GitHub", "VS Code", "Jupyter", "Google Colab", "Postman", "MySQL Workbench"], colorbadge: "bg-yellow-400/20 text-yellow-400 border border-yellow-400/30" },
               ].map((category, idx) => (
                 <motion.div 
                   key={idx}
