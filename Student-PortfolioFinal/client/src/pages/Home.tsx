@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import profileImage from "@assets/myphoto.png";
-import resumePDF from "@assets/krisha_resume.pdf";
+import resumePDF from "@assets/krishashah_resume.pdf";
 import cloudGuardPreview from "@assets/1760344517239.jpeg";
 import cloudG1 from "@assets/1760344514934.jpeg";
 import cloudG2 from "@assets/1760344515203.jpeg";
