@@ -103,7 +103,7 @@ export default function Home() {
               variant="secondary"
               className="mb-5 w-fit bg-primary/20 text-primary border-primary/20"
             >
-              Open to Work
+              Available for hire
             </Badge>
 
             <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight">
